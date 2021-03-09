@@ -23,11 +23,29 @@ class Diagnosis extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            height: 60,
+          Container(
+            height: 70,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: FlatButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                child: Container(
+                    height: 20,
+                    width: 90,
+                    child: Center(
+                      child: Text('skip',
+                          style: TextStyle(
+                            color: Colors.blueAccent,
+                            fontSize: 20,
+                          )),
+                    )),
+              ),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
             child: Center(
               child: Text(
                 '今日の評価',
@@ -196,55 +214,26 @@ class _TapBottonState extends State<TapBotton> {
           shrinkWrap: true,
           children: containerList,
         ),
-        // Container(
-        //   margin: EdgeInsets.symmetric(
-        //     vertical: 11,
-        //     horizontal: 32,
-        //   ),
-        //   height: 85,
-        //   decoration: BoxDecoration(
-        //       color: Colors.white,
-        //       borderRadius: BorderRadius.circular(40),
-        //       boxShadow: [
-        //         BoxShadow(
-        //           color: Colors.blueAccent,
-        //           blurRadius: 20,
-        //         ),
-        //       ]),
-        //   child: Row(
-        //     children: [
-        //       SizedBox(
-        //         width: 30,
-        //       ),
-        //       Container(
-        //         height: 85,
-        //         width: 85,
-        //         child: Center(
-        //           child: Text(
-        //             '\u{1f628}',
-        //             style: TextStyle(
-        //               fontSize: 55,
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        //       SizedBox(
-        //         width: 10,
-        //       ),
-        //       Expanded(
-        //         child: Center(
-        //           child: Text(
-        //             '最高！',
-        //             style: TextStyle(fontSize: 40),
-        //           ),
-        //         ),
-        //       ),
-        //       SizedBox(
-        //         width: 30,
-        //       )
-        //     ],
-        //   ),
-        // ),
+        Container(
+          height: 100,
+          child: Align(
+            alignment: Alignment.center,
+            child: ButtonTheme(
+              minWidth: 240,
+              height: 53,
+              buttonColor: Colors.blueGrey,
+              child: RaisedButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                child: Text(
+                  '決定',
+                  style: TextStyle(fontSize: 30, color: Colors.black87),
+                ),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
