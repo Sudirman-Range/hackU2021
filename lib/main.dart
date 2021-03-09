@@ -16,8 +16,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class NextPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("次のページ"),
+      ),
+      body: Container(
+        height: double.infinity,
+        color: Colors.red,
+      ),
+    );
+  }
+}
+
 class Diagnosis extends StatelessWidget {
-  final List<int> list = [1, 2, 3, 4, 5];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +53,7 @@ class Diagnosis extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.blueAccent,
                             fontSize: 20,
+                            letterSpacing: 1.5,
                           )),
                     )),
               ),
@@ -79,7 +94,7 @@ class _TapBottonState extends State<TapBotton> {
   static List<String> condition = ['最高！', 'まあまあ', '普通', 'よくない', '最悪...'];
   static int tapedContainer;
 
-  Widget TapedBotton(int containerNum, String unicode, String condition) {
+  Widget unTapedBotton(int containerNum, String unicode, String condition) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -91,7 +106,7 @@ class _TapBottonState extends State<TapBotton> {
           vertical: 11,
           horizontal: 32,
         ),
-        height: 85,
+        height: 80,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(30),
@@ -113,6 +128,7 @@ class _TapBottonState extends State<TapBotton> {
                 child: Text(
                   '$unicode',
                   style: TextStyle(
+                    color: Colors.white38,
                     fontSize: 55,
                   ),
                 ),
@@ -125,7 +141,7 @@ class _TapBottonState extends State<TapBotton> {
               child: Center(
                 child: Text(
                   '$condition',
-                  style: TextStyle(fontSize: 40),
+                  style: TextStyle(color: Colors.black45, fontSize: 40),
                 ),
               ),
             ),
@@ -138,7 +154,7 @@ class _TapBottonState extends State<TapBotton> {
     );
   }
 
-  Widget unTapedBotton(int containerNum, String unicode, String condition) {
+  Widget TapedBotton(int containerNum, String unicode, String condition) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -150,7 +166,7 @@ class _TapBottonState extends State<TapBotton> {
           vertical: 11,
           horizontal: 32,
         ),
-        height: 85,
+        height: 80,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(40),
@@ -184,7 +200,7 @@ class _TapBottonState extends State<TapBotton> {
               child: Center(
                 child: Text(
                   '$condition',
-                  style: TextStyle(fontSize: 40),
+                  style: TextStyle(color: Colors.black87, fontSize: 40),
                 ),
               ),
             ),
@@ -202,9 +218,9 @@ class _TapBottonState extends State<TapBotton> {
     List<Widget> containerList = [];
     for (int i = 0; i < 5; i++) {
       if (tapedContainer != i) {
-        containerList.add(TapedBotton(i, unicode[i], condition[i]));
-      } else {
         containerList.add(unTapedBotton(i, unicode[i], condition[i]));
+      } else {
+        containerList.add(TapedBotton(i, unicode[i], condition[i]));
       }
     }
     ;
@@ -221,14 +237,24 @@ class _TapBottonState extends State<TapBotton> {
             child: ButtonTheme(
               minWidth: 240,
               height: 53,
-              buttonColor: Colors.blueGrey,
+              buttonColor: Colors.lightBlueAccent,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NextPage(),
+                      ));
+                },
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
+                    borderRadius: BorderRadius.circular(40)),
                 child: Text(
                   '決定',
-                  style: TextStyle(fontSize: 30, color: Colors.black87),
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black54,
+                    letterSpacing: 13,
+                  ),
                 ),
               ),
             ),
