@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,21 +13,6 @@ class MyApp extends StatelessWidget {
       title: 'Today Diagnosis',
       theme: ThemeData(fontFamily: 'HonokaMaru'),
       home: Diagnosis(),
-    );
-  }
-}
-
-class NextPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("次のページ"),
-      ),
-      body: Container(
-        height: double.infinity,
-        color: Colors.red,
-      ),
     );
   }
 }
@@ -63,10 +49,11 @@ class Diagnosis extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
             child: Center(
               child: Text(
-                '今日の評価',
+                '今日の評価は？',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
+                  letterSpacing: -0.2,
                 ),
               ),
             ),
@@ -240,11 +227,9 @@ class _TapBottonState extends State<TapBotton> {
               buttonColor: Colors.lightBlueAccent,
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => NextPage(),
-                      ));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => Home(),
+                  ));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
