@@ -25,21 +25,39 @@ class _HomeState extends State<Home> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white.withOpacity(0.0),
+          elevation: 0,
           bottom: TabBar(
+            indicator: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black38,
+                  blurRadius: 4,
+                )
+              ],
+              color: Colors.blueAccent.withOpacity(0.8),
+            ),
+            indicatorWeight: 3,
+            labelColor: Colors.blueGrey,
+            unselectedLabelColor: Colors.black54,
             tabs: [
               Tab(
                 icon: Icon(
                   Icons.home,
+                  size: 30,
                 ),
               ),
               Tab(
                 icon: Icon(
                   Icons.list,
+                  size: 30,
                 ),
               ),
               Tab(
                 icon: Icon(
                   Icons.featured_play_list,
+                  size: 30,
                 ),
               )
             ],

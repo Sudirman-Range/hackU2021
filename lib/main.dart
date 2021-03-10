@@ -24,7 +24,7 @@ class Diagnosis extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: 70,
+            height: 75,
             child: Align(
               alignment: Alignment.bottomRight,
               child: FlatButton(
@@ -37,7 +37,7 @@ class Diagnosis extends StatelessWidget {
                     child: Center(
                       child: Text('skip',
                           style: TextStyle(
-                            color: Colors.blueAccent,
+                            color: Colors.blueAccent.withOpacity(0.8),
                             fontSize: 20,
                             letterSpacing: 1.5,
                           )),
@@ -93,7 +93,7 @@ class _TapBottonState extends State<TapBotton> {
           vertical: 11,
           horizontal: 32,
         ),
-        height: 80,
+        height: 78,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(30),
@@ -153,7 +153,7 @@ class _TapBottonState extends State<TapBotton> {
           vertical: 11,
           horizontal: 32,
         ),
-        height: 80,
+        height: 78,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(40),
@@ -224,7 +224,7 @@ class _TapBottonState extends State<TapBotton> {
             child: ButtonTheme(
               minWidth: 240,
               height: 53,
-              buttonColor: Colors.lightBlueAccent,
+              buttonColor: Colors.blueAccent.withOpacity(0.8),
               child: RaisedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
