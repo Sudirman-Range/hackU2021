@@ -31,17 +31,24 @@ class Diagnosis extends StatelessWidget {
                 onPressed: () {},
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
-                child: Container(
-                    height: 20,
-                    width: 90,
-                    child: Center(
-                      child: Text('skip',
-                          style: TextStyle(
-                            color: Colors.blueAccent.withOpacity(0.8),
-                            fontSize: 20,
-                            letterSpacing: 1.5,
-                          )),
-                    )),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => Home(),
+                    ));
+                  },
+                  child: Container(
+                      height: 20,
+                      width: 90,
+                      child: Center(
+                        child: Text('skip',
+                            style: TextStyle(
+                              color: Colors.blueAccent.withOpacity(0.8),
+                              fontSize: 20,
+                              letterSpacing: 1.5,
+                            )),
+                      )),
+                ),
               ),
             ),
           ),
@@ -221,7 +228,7 @@ class _TapBottonState extends State<TapBotton> {
           children: containerList,
         ),
         Container(
-          height: 75,
+          height: 60,
           child: Align(
             alignment: Alignment.center,
             child: ButtonTheme(
