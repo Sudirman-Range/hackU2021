@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
               color: Colors.blueAccent.withOpacity(0.8),
             ),
             indicatorWeight: 3,
-            labelColor: Colors.blueGrey,
+            labelColor: Colors.black54,
             unselectedLabelColor: Colors.black54,
             tabs: [
               Tab(

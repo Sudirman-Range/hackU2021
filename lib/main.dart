@@ -80,12 +80,14 @@ class _TapBottonState extends State<TapBotton> {
   ];
   static List<String> condition = ['最高！', 'まあまあ', '普通', 'よくない', '最悪...'];
   static int tapedContainer;
+  static bool buttonDisable = true;
 
   Widget unTapedBotton(int containerNum, String unicode, String condition) {
     return GestureDetector(
       onTap: () {
         setState(() {
           tapedContainer = containerNum;
+          buttonDisable = false;
         });
       },
       child: Container(
@@ -146,6 +148,7 @@ class _TapBottonState extends State<TapBotton> {
       onTap: () {
         setState(() {
           tapedContainer = null;
+          buttonDisable = true;
         });
       },
       child: Container(
@@ -218,19 +221,21 @@ class _TapBottonState extends State<TapBotton> {
           children: containerList,
         ),
         Container(
-          height: 100,
+          height: 75,
           child: Align(
             alignment: Alignment.center,
             child: ButtonTheme(
               minWidth: 240,
               height: 53,
-              buttonColor: Colors.blueAccent.withOpacity(0.8),
+              buttonColor: Colors.blueAccent.withOpacity(1),
               child: RaisedButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => Home(),
-                  ));
-                },
+                onPressed: buttonDisable
+                    ? null
+                    : () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ));
+                      },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
                 child: Text(
