@@ -228,7 +228,7 @@ class _TapBottonState extends State<TapBotton> {
           children: containerList,
         ),
         Container(
-          height: 60,
+          height: 100,
           child: Align(
             alignment: Alignment.center,
             child: ButtonTheme(
