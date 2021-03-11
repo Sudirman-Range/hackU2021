@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "881395291065",
+    "project_id": "hackutest-bfc85",
+    "storage_bucket": "hackutest-bfc85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881395291065:android:ea86d8c0f85ba6cb135c68",
+        "android_client_info": {
+          "package_name": "com.example.hacku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881395291065-c7lvcbplucr6dre05pf98huarttfhjv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWe98uPkxSqZ0vzIKgKV0N7luiVW1WC-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881395291065-c7lvcbplucr6dre05pf98huarttfhjv0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "881395291065-acba60k5nm1m5qrhhk4nun1g4vkcphqs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hacku"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
