@@ -3,26 +3,18 @@ import 'daylist.dart';
 import 'graph.dart';
 import 'notificationlist.dart';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
+// class Home extends StatefulWidget {
+//   @override
+//   _HomeState createState() => _HomeState();
+// }
 
-class PageInfo {
-  Widget widget;
-  PageInfo(this.widget);
-}
-
-class _HomeState extends State<Home> {
-  final List<PageInfo> _pages = [
-    PageInfo(Graph()),
-    PageInfo(DayList()),
-    PageInfo(NotificationList()),
-  ];
+class Home extends StatelessWidget {
+  dynamic todaystate;
+  Home(this.todaystate);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white.withOpacity(0.0),
@@ -50,22 +42,14 @@ class _HomeState extends State<Home> {
               ),
               Tab(
                 icon: Icon(
-                  Icons.list,
-                  size: 30,
-                ),
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.featured_play_list,
+                  Icons.notifications_active,
                   size: 30,
                 ),
               )
             ],
           ),
         ),
-        body: TabBarView(
-          children: _pages.map((PageInfo page) => page.widget).toList(),
-        ),
+        body: TabBarView(children: [Graph(todaystate), NotificationList()]),
       ),
     );
   }

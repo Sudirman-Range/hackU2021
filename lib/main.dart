@@ -33,9 +33,9 @@ class Diagnosis extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15)),
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ));
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (context) => Home(null)),
+                        (_) => false);
                   },
                   child: Container(
                       height: 20,
@@ -99,10 +99,10 @@ class _TapBottonState extends State<TapBotton> {
       },
       child: Container(
         margin: EdgeInsets.symmetric(
-          vertical: 11,
+          vertical: 9,
           horizontal: 32,
         ),
-        height: 78,
+        height: 75,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(30),
@@ -160,10 +160,10 @@ class _TapBottonState extends State<TapBotton> {
       },
       child: Container(
         margin: EdgeInsets.symmetric(
-          vertical: 11,
+          vertical: 9,
           horizontal: 32,
         ),
-        height: 78,
+        height: 75,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(40),
@@ -228,7 +228,7 @@ class _TapBottonState extends State<TapBotton> {
           children: containerList,
         ),
         Container(
-          height: 100,
+          height: 75,
           child: Align(
             alignment: Alignment.center,
             child: ButtonTheme(
@@ -239,9 +239,11 @@ class _TapBottonState extends State<TapBotton> {
                 onPressed: buttonDisable
                     ? null
                     : () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => Home(),
-                        ));
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (context) => Home(tapedContainer),
+                            ),
+                            (_) => false);
                       },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
