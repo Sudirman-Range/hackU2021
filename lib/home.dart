@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'daylist.dart';
 import 'graph.dart';
 import 'notificationlist.dart';
 
